@@ -22,9 +22,13 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 
 
-## Installation
+## Usage
 
+You can see all supported colors by cloning the repo and running:
 
+    $ mix run script/colors.exs
+
+TODO: write actual usage instructions
 
 
 # License
