@@ -296,7 +296,7 @@ defmodule Bunt.ANSI do
     end
   end
 
-  @color_aliases Application.get_env(:bunt, :color_aliases)
+  @color_aliases Application.get_env(:bunt, :color_aliases, [])
   def color_aliases, do: @color_aliases
 
   for {alias_name, original_name} <- @color_aliases do
