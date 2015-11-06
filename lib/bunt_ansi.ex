@@ -1,6 +1,18 @@
 defmodule Bunt.ANSI.Sequence do
   @moduledoc false
 
+  defmacro defalias(alias_name, original_name) do
+    quote bind_quoted: [alias_name: alias_name, original_name: original_name] do
+      def unquote(alias_name)() do
+        unquote(original_name)()
+      end
+
+      defp format_sequence(unquote(alias_name)) do
+        unquote(original_name)()
+      end
+    end
+  end
+
   defmacro defsequence(name, code, prefix \\ "", terminator \\ "m") do
     quote bind_quoted: [name: name, code: code, prefix: prefix, terminator: terminator] do
       def unquote(name)() do
@@ -23,7 +35,7 @@ defmodule Bunt.ANSI do
   other output options on video text terminals.
   """
 
-  import Bunt.ANSI.sequence
+  import Bunt.ANSI.Sequence
 
   @color_tuples [
     {nil,       :color16, 16, {0, 0, 0}},
@@ -282,6 +294,14 @@ defmodule Bunt.ANSI do
       @doc "Sets background color to #{name}"
       defsequence :"#{name}_background", code, "48;5;"
     end
+  end
+
+  @color_aliases Application.get_env(:bunt, :color_aliases)
+  def color_aliases, do: @color_aliases
+
+  for {alias_name, original_name} <- @color_aliases do
+    defalias alias_name, original_name
+    defalias :"#{alias_name}_background", :"#{original_name}_background"
   end
 
 
