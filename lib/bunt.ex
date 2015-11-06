@@ -1,5 +1,9 @@
 defmodule Bunt do
+  use Application
+
   alias Bunt.ANSI
+
+  @version Mix.Project.config[:version]
 
   def puts, do: puts("")
   def puts(nil), do: puts("")
@@ -10,4 +14,9 @@ defmodule Bunt do
     |> ANSI.format
     |> IO.puts
   end
+
+  def start(_, _), do: nil
+
+  def version, do: @version
+
 end

@@ -23,7 +23,7 @@ defmodule Bunt.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:bunt, :logger]]
   end
 
   # Dependencies can be Hex packages:
