@@ -15,7 +15,7 @@ defmodule Bunt do
     |> IO.puts
   end
 
-  def start(_, _), do: nil
+  def start(_, _), do: {:ok, self}
 
   def version, do: @version
 

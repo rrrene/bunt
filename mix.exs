@@ -14,7 +14,7 @@ defmodule Bunt.Mixfile do
       package: [
         maintainers: ["René Föhring"],
         licenses: ["MIT"],
-        links: %{ "GitHub" => "https://github.com/rrrene/bunt" },
+        links: %{"GitHub" => "https://github.com/rrrene/bunt"},
       ]
     ]
   end
@@ -23,7 +23,7 @@ defmodule Bunt.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [mod: {Bunt, []}, applications: [:logger]]
   end
 
   # Dependencies can be Hex packages:
