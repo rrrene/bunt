@@ -91,7 +91,7 @@ Then you can use these keys instead of the standard colors in your code:
     [:_cupcake, "Hello World!"]
     |> Bunt.puts
 
-Use this to give your colors semantics. They get easier to change later that way. (A colleague of mine shouted "It's CSS for console applications!" when he saw this and although that is ... well, not true, I really like the sentiment)
+Use this to give your colors semantics. They get easier to change later that way. (A colleague of mine shouted "It's CSS for console applications!" when he saw this and although that is ... well, not true, I really like the sentiment! :+1:)
 
 
 
