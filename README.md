@@ -29,7 +29,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 ### 256 colors
 
-IO.ANSI provides an interface to write text to the terminal in eight different colors like this:
+`IO.ANSI` provides an interface to write text to the terminal in eight different colors like this:
 
     ["Hello, ", :red, :bright, "world!"]
     |> IO.ANSI.format
@@ -43,7 +43,7 @@ We can use `Bunt` in the same way:
 
     ["Hello, ", :color202, :bright, "world!"]
     |> Bunt.ANSI.format
-    |> Bunt.puts
+    |> IO.puts
 
 which puts a bright orange-red `"world!"` on the screen.
 
