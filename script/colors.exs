@@ -74,7 +74,7 @@ Bunt.puts
 Bunt.puts [:_code, "    [:gold, \"Look, it's really gold text!\"] |> Bunt.puts"]
 Bunt.puts [:_code, "    ", [:gold, "Look, it's really gold text!"]]
 Bunt.puts
-Bunt.puts "Replace `hotpink` with any of these values:"
+Bunt.puts "Replace `:gold` with any of these values:"
 Bunt.puts
 
 
