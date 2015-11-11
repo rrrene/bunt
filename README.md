@@ -1,8 +1,6 @@
-# Bunt
+![Bunt](https://raw.github.com/rrrene/bunt/master/assets/logo.png)
 
 Enables 256 color ANSI coloring in the terminal and gives you the ability to alias colors to more semantic and application-specfic names.
-
-![Colors](https://raw.github.com/rrrene/bunt/master/assets/colors.png)
 
 
 ## Installation
@@ -28,6 +26,8 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 
 ### 256 colors
+
+![Colors](https://raw.github.com/rrrene/bunt/master/assets/colors.png)
 
 `IO.ANSI` provides an interface to write text to the terminal in eight different colors like this:
 
