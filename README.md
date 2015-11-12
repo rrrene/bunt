@@ -5,7 +5,7 @@ Enables 256 color ANSI coloring in the terminal and gives you the ability to ali
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+It's available via Hex:
 
   1. Add bunt to your list of dependencies in `mix.exs`:
 
