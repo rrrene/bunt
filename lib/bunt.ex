@@ -11,6 +11,11 @@ defmodule Bunt do
     |> IO.puts
   end
 
+  def warn(value \\ "") do
+    formatted_value = format(value)
+    IO.puts(:stderr, formatted_value)
+  end
+
   def write(value \\ "") do
     value
     |> format
