@@ -8,7 +8,7 @@ defmodule Bunt.Mixfile do
       elixir: "~> 1.1",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
-      deps: deps,
+      deps: deps(),
       name: "Bunt",
       description: "256 color ANSI coloring in the terminal",
       package: [

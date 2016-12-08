@@ -26,7 +26,7 @@ defmodule Bunt do
     |> ANSI.format
   end
 
-  def start(_, _), do: {:ok, self}
+  def start(_, _), do: {:ok, self()}
 
   def version, do: @version
 
