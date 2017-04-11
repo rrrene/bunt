@@ -1,6 +1,4 @@
 defmodule Bunt do
-  use Application
-
   alias Bunt.ANSI
 
   @version Mix.Project.config[:version]
@@ -30,8 +28,6 @@ defmodule Bunt do
     |> List.flatten
     |> ANSI.format
   end
-
-  def start(_, _), do: {:ok, self()}
 
   def version, do: @version
 
