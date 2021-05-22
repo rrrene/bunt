@@ -8,17 +8,23 @@ Enables 256 color ANSI coloring in the terminal and gives you the ability to ali
 It's available via Hex:
 
   1. Add bunt to your list of dependencies in `mix.exs`:
-
-        def deps do
-          [{:bunt, "~> 0.1.0"}]
-        end
+```elixir
+def deps do
+  [{:bunt, "~> 0.1.0"}]
+end
+```
 
   2. Ensure bunt is started before your application:
+```elixir
+def application do
+  [applications: [:bunt]]
+end
+```
 
-        def application do
-          [applications: [:bunt]]
-        end
-
+  3. Add this to your `config.exs`:
+```elixir
+config :elixir, ansi_enabled: true
+```
 
 
 ## Usage
