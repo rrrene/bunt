@@ -3,12 +3,12 @@ defmodule Bunt do
 
   alias Bunt.ANSI
 
-  @version Mix.Project.config[:version]
+  @version Mix.Project.config()[:version]
 
   def puts(value \\ "") do
     value
     |> format
-    |> IO.puts
+    |> IO.puts()
   end
 
   def warn(value \\ "") do
@@ -19,20 +19,20 @@ defmodule Bunt do
   def write(value \\ "") do
     value
     |> format
-    |> IO.write
+    |> IO.write()
   end
 
   def format, do: format("")
   def format(nil), do: format("")
   def format(text) when is_binary(text), do: text
+
   def format(list) when is_list(list) do
     list
-    |> List.flatten
-    |> ANSI.format
+    |> List.flatten()
+    |> ANSI.format()
   end
 
   def start(_, _), do: {:ok, self()}
 
   def version, do: @version
-
 end
