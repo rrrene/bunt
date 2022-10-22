@@ -298,7 +298,13 @@ defmodule Bunt.ANSI do
     end
   end
 
-  @color_aliases Application.compile_env(:bunt, :color_aliases, [])
+  if apply(Version, :match?, [System.version(), ">= 1.14.0-dev"]) do
+    @color_aliases Application.compile_env(:bunt, :color_aliases, [])
+  else
+    function = :get_env
+    @color_aliases apply(Application, function, [:bunt, :color_aliases, []])
+  end
+
   def color_aliases, do: @color_aliases
 
   for {alias_name, original_name} <- @color_aliases do
