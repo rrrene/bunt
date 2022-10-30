@@ -324,7 +324,7 @@ defmodule Bunt.ANSI do
   """
   @spec enabled? :: boolean
   def enabled? do
-    Application.get_env(:elixir, :ansi_enabled, false)
+    Application.get_env(:elixir, :ansi_enabled, false) && !System.get_env("NO_COLOR")
   end
 
   @doc "Resets all attributes"
