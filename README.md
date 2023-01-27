@@ -10,7 +10,7 @@ It's available via Hex:
   1. Add bunt to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:bunt, "~> 0.1.0"}]
+          [{:bunt, "~> 0.2.0"}]
         end
 
   2. Ensure bunt is started before your application:
