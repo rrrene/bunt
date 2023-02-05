@@ -1,10 +1,12 @@
 defmodule Bunt.Mixfile do
   use Mix.Project
 
+  @version "1.0.0-rc.0"
+
   def project do
     [
       app: :bunt,
-      version: "0.2.1",
+      version: @version,
       elixir: "~> 1.1",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
@@ -15,8 +17,23 @@ defmodule Bunt.Mixfile do
         maintainers: ["René Föhring"],
         licenses: ["MIT"],
         links: %{"GitHub" => "https://github.com/rrrene/bunt"}
-      ]
+      ],
+      docs: docs()
     ]
+  end
+
+  defp docs do
+    [
+      source_ref: "v#{@version}",
+      main: "readme",
+      logo: "assets/logo.png",
+      formatters: ["html"],
+      extras: extras()
+    ]
+  end
+
+  defp extras do
+    ["README.md"]
   end
 
   # Configuration for the OTP application
@@ -36,6 +53,8 @@ defmodule Bunt.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+    ]
   end
 end
